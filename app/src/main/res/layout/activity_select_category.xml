@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
+    android:background="@drawable/login_bg"
     tools:context=".SelectCategory">
 
     <TextView
@@ -20,7 +20,7 @@
         android:text="Select News Category"
         android:textSize="25sp"
         android:textStyle="bold|italic"
-        android:textColor="@color/orange"/>
+        android:textColor="@color/white"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/select_news"
@@ -45,18 +45,19 @@
                     android:id="@+id/general_news"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="80dp"
                     android:layout_marginLeft="80dp"
-                    tools:ignore="MissingConstraints"
-                    app:layout_constraintTop_toTopOf="@id/bt_area"
-                    app:layout_constraintLeft_toLeftOf="@id/bt_area"
-                    app:layout_constraintRight_toRightOf="@id/bt_area"
-
-                    android:layout_marginTop="80dp"
-                    android:text="GENERAL NEWS"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginRight="80dp"
+                    android:background="@drawable/bt_back"
                     android:paddingLeft="40dp"
                     android:paddingRight="40dp"
-                    android:background="@drawable/bt_back"/>
+
+                    android:text="GENERAL NEWS"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="@id/bt_area"
+                    app:layout_constraintRight_toRightOf="@id/bt_area"
+                    app:layout_constraintTop_toTopOf="@id/bt_area"
+                    tools:ignore="MissingConstraints" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/sports_news"
@@ -90,16 +91,108 @@
                     android:paddingRight="40dp"
                     android:background="@drawable/bt_back"/>
 
-
-                <ImageView
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="310dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/health_news"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/login_bg">
+
+
+                    <LinearLayout
+                        android:id="@+id/user_id_space"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User ID:"
+                            android:padding="20dp"/>
+
+                        <TextView
+                            android:id="@+id/tv_user_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="abcde@gmail.com"
+                            android:padding="20dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/email_id_space"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        app:layout_constraintTop_toBottomOf="@id/user_id_space"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email ID:"
+                            android:padding="20dp"/>
+
+                        <TextView
+                            android:id="@+id/tv_email_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="abcde@gmail.com"
+                            android:padding="20dp"/>
+
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_signout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@color/light_blue_600"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:text="SIGN OUT"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/email_id_space"/>
+
+
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <!--<ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     app:layout_constraintTop_toBottomOf="@id/health_news"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+
                     android:layout_marginTop="120dp"
-                    android:src="@drawable/ic_undraw_newspaper_k72w"/>
+                    android:src="@drawable/ic_undraw_newspaper_k72w"/>-->
 
 
 

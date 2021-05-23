@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatDelegate
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_select_category.*
 
 class SelectCategory : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,20 +33,20 @@ class SelectCategory : AppCompatActivity() {
         health_news.setOnClickListener {
             startActivity(Intent(this, HeathNewsActivity::class.java))
         }
-//        tech_news.setOnClickListener {
-//
-//        }
-//        business_news.setOnClickListener {
-//
-//        }
-//        science_news.setOnClickListener {
-//
-//        }
-//        entertainment_news.setOnClickListener {
-//
-//        }
-//        general_news.setOnClickListener {
-//
-//        }
+
+
+        val userId = intent.getStringExtra("user_id")
+        val emailId = intent.getStringExtra("email_id")
+
+        tv_user_id.text = "$userId"
+        tv_email_id.text = "$emailId"
+
+        btn_signout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(this@SelectCategory, LoginActivity::class.java))
+            finish()
+        }
+
+
     }
 }

@@ -11,19 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsFlash">
-        <activity android:name=".SportsNewsActivity"></activity>
+        <activity android:name=".RegisterActivity">
+
+        </activity>
+        <activity android:name=".LoginActivity">
+
+        </activity>
+        <activity android:name=".SportsNewsActivity" />
         <activity android:name=".HeathNewsActivity" />
-        <activity
-            android:name=".SportsActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_sports"
-            android:theme="@style/Theme.NewsFlash.Fullscreen" />
-        <activity
-            android:name=".FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen"
-            android:theme="@style/Theme.NewsFlash.Fullscreen" />
-        <activity android:name=".SportsNews" />
         <activity android:name=".SelectCategory">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

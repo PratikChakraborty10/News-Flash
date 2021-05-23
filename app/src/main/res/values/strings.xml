@@ -4,4 +4,8 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_sports">FullscreenActivity</string>
+    <string name="already_have_an_account">Already have an account</string>
+    <string name="login">Login</string>
+    <string name="dont_t_have_an_account">Dont\'t have an account</string>
+    <string name="register">Register</string>
 </resources>
