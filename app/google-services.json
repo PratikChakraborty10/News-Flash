@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "648879024730",
+    "project_id": "newsflashauth",
+    "storage_bucket": "newsflashauth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648879024730:android:cd22d6d6a09aeae31c8663",
+        "android_client_info": {
+          "package_name": "com.example.newsflash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648879024730-25lep2qt3rt87q1vk054kmi5pshlp8em.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newsflash",
+            "certificate_hash": "e463b3905dbfc78e45abd2a2e22263ceb6b3fd73"
+          }
+        },
+        {
+          "client_id": "648879024730-2d9q5uopctvvcmpbkld2hgcovu6mb2oe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMkCrZ9YyUprU1yxJq3g6RC7jnke7gBK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648879024730-2d9q5uopctvvcmpbkld2hgcovu6mb2oe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

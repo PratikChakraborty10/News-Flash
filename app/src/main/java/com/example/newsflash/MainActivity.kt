@@ -1,6 +1,7 @@
 package com.example.newsflash
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -41,26 +42,26 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
                 Request.Method.GET,
                 url,
                 null,
-                Response.Listener {
-                    val newsJsonArray = it.getJSONArray("articles")
-                    val newsArray = ArrayList<News>()
-                    for(i in 0 until newsJsonArray.length()) {
-                        val newsJsonObject = newsJsonArray.getJSONObject(i)
-                        val news = News(
-                                newsJsonObject.getString("title"),
-                                newsJsonObject.getString("author"),
-                                newsJsonObject.getString("url"),
-                                newsJsonObject.getString("urlToImage")
-                        )
-                        newsArray.add(news)
-                    }
-
-                    mAdapter.updateNews(newsArray)
-                },
-                Response.ErrorListener {
-                    startActivity(Intent(this, ErrorActivity::class.java))
-                    finish()
+            {
+                val newsJsonArray = it.getJSONArray("articles")
+                val newsArray = ArrayList<News>()
+                for(i in 0 until newsJsonArray.length()) {
+                    val newsJsonObject = newsJsonArray.getJSONObject(i)
+                    val news = News(
+                            newsJsonObject.getString("title"),
+                            newsJsonObject.getString("author"),
+                            newsJsonObject.getString("url"),
+                            newsJsonObject.getString("urlToImage")
+                    )
+                    newsArray.add(news)
                 }
+
+                mAdapter.updateNews(newsArray)
+            },
+            {
+                startActivity(Intent(this, ErrorActivity::class.java))
+                finish()
+            }
         )
 
 
@@ -70,7 +71,8 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
     override fun onItemClicked(item: News) {
 
         val builder = CustomTabsIntent.Builder();
-        val customTabsIntent = builder.build();
+        val colorInt = Color.parseColor("#820052")
+        val customTabsIntent = builder.setToolbarColor(colorInt).build();
         customTabsIntent.launchUrl(this, Uri.parse(item.url));
     }
 }

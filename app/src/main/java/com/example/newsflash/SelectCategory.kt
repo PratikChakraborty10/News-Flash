@@ -43,7 +43,7 @@ class SelectCategory : AppCompatActivity() {
 
         btn_signout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-            startActivity(Intent(this@SelectCategory, LoginActivity::class.java))
+            //startActivity(Intent(this@SelectCategory, LoginActivity::class.java))
             finish()
         }
 
